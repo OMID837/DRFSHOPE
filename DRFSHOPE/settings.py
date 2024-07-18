@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'account',
+    'cart',
+    'order',
     'product',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
@@ -138,7 +140,8 @@ EMAIL_HOST_PASSWORD = env['EMAIL_HOST_PASSWORD']
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    ),
+    'DEFAULT_PAGINATION_CLASS': 'product.pagination.Page',
 }
 
 SIMPLE_JWT = {
